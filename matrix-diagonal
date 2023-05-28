@@ -1,0 +1,9 @@
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        result, arr_len = 0, len(mat)
+
+        for i in range(arr_len):
+            result += mat[i][i]
+            result += mat[i][arr_len - 1 - i]
+        
+        return result - (mat[arr_len // 2][arr_len // 2] if arr_len % 2 else 0)
